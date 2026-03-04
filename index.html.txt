@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Наш 8-А клас</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+header {
+    background-color: orange;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 50%;
+    margin: 20px auto;
+}
+
+nav {
+    margin: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.main-btn {
+    background-color: #8faadc;
+}
+
+.study-btn {
+    background-color: #f4b183;
+}
+
+.rest-btn {
+    background-color: #93c47d;
+}
+
+.section {
+    display: none;
+    margin-top: 20px;
+}
+
+.active {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<header>Наш 8-А клас</header>
+
+<nav>
+    <button class="main-btn" onclick="showSection('home')">Головна сторінка</button>
+    <button class="main-btn" onclick="showSection('study')">Навчання</button>
+    <button class="main-btn" onclick="showSection('rest')">Відпочинок</button>
+</nav>
+
+<div id="home" class="section active">
+    <h2>Ласкаво просимо!</h2>
+    <p>Це офіційний сайт нашого 8-А класу.</p>
+</div>
+
+<div id="study" class="section">
+    <h2>Навчання</h2>
+    <button class="study-btn">Предмети</button>
+    <button class="study-btn">Розклад уроків</button>
+    <button class="study-btn">Навчальні матеріали</button>
+</div>
+
+<div id="rest" class="section">
+    <h2>Відпочинок</h2>
+    <button class="rest-btn">Свята</button>
+    <button class="rest-btn">Подорожі</button>
+</div>
+
+<script>
+function showSection(sectionId) {
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
